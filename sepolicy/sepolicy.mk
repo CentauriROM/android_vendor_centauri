@@ -3,7 +3,7 @@
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/liquid/sepolicy
+    vendor/centauri/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \

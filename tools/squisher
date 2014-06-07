@@ -4,7 +4,7 @@
 # cyanogen
 #
 
-. $ANDROID_BUILD_TOP/vendor/liquid/tools/colors
+. $ANDROID_BUILD_TOP/vendor/centauri/tools/colors
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
@@ -39,7 +39,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
 	exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/liquid/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/centauri/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 DELETE_LIBS="libc_malloc_debug_leak.so libc_malloc_debug_qemu.so"
@@ -110,16 +110,16 @@ rm -rf $REPACK/ota/system/tts
 # No need for srec
 rm -rf $REPACK/ota/system/usr/srec
 
-# Delete liquid specific files
-if [ -f $ANDROID_BUILD_TOP/vendor/liquid/tools/squisher.rm ]; then
-	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/liquid/tools/squisher.rm`; do
+# Delete centauri specific files
+if [ -f $ANDROID_BUILD_TOP/vendor/centauri/tools/squisher.rm ]; then
+	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/centauri/tools/squisher.rm`; do
 		rm -f $REPACK/ota/$RM_FILE
 	done
 fi
 
 # Delete target product specific files
-if [ -f $ANDROID_BUILD_TOP/vendor/liquid/tools/$TARGET_PRODUCT-squisher.rm ]; then
-	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/liquid/tools/$TARGET_PRODUCT-squisher.rm`; do
+if [ -f $ANDROID_BUILD_TOP/vendor/centauri/tools/$TARGET_PRODUCT-squisher.rm ]; then
+	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/centauri/tools/$TARGET_PRODUCT-squisher.rm`; do
 		rm -f $REPACK/ota/$RM_FILE
 	done
 fi
@@ -136,7 +136,7 @@ rm -rf $REPACK/ota/system/etc/recovery-resource.dat
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Determine what to name the new signed package
-MODVERSION=`sed -n -e'/ro\.liquid\.version/s/^.*=//p' $OUT/system/build.prop`
+MODVERSION=`sed -n -e'/ro\.centauri\.version/s/^.*=//p' $OUT/system/build.prop`
 TARGET_PRODUCT_FINAL=`echo $TARGET_PRODUCT | cut -b 8-`
 echo -e ${grn}"MODVERSION: $MODVERSION"${txtrst}
 OUTFILE=$OUT/$MODVERSION-$TARGET_PRODUCT_FINAL.zip
@@ -144,12 +144,12 @@ ABIGEN=`grep 'ro.product.cpu.abi=' $REPACK/ota/system/build.prop | sed -e 's/ro.
 
 if [ -n $ABIGEN ]; then
 	echo ${cya}"Packing in Pre-Built Libs for CPU Variant:${ylw}$ABIGEN"${txtrst}
-	cp ${ANDROID_BUILD_TOP}/vendor/liquid/prebuilt/libs/$ABIGEN/libbypass.so $REPACK/ota/system/lib/libbypass.so
+	cp ${ANDROID_BUILD_TOP}/vendor/centauri/prebuilt/libs/$ABIGEN/libbypass.so $REPACK/ota/system/lib/libbypass.so
 	echo ""
 fi
 
 # Add changelog
-. $ANDROID_BUILD_TOP/vendor/liquid/tools/changelog
+. $ANDROID_BUILD_TOP/vendor/centauri/tools/changelog
 
 # Pack it up and sign
 echo -e ${grn}"Zipping package..."${txtrst}
@@ -164,8 +164,8 @@ echo -e ${grn}"Cleaning up..."${txtrst}
 rm -rf $REPACK
 
 # get current version
-eval $(grep "^LIQUID_VERSION_" vendor/liquid/config/common.mk | sed 's/ *//g')
-VERSION="$LIQUID_VERSION_MAJOR.$LIQUID_VERSION_MINOR.$LIQUID_VERSION_MAINTENANCE"
+eval $(grep "^CENTAURI_VERSION_" vendor/centauri/config/common.mk | sed 's/ *//g')
+VERSION="$CENTAURI_VERSION_MAJOR.$CENTAURI_VERSION_MINOR.$CENTAURI_VERSION_MAINTENANCE"
 
 # Create a md5 checksum image of the repacked package
 (
@@ -173,15 +173,7 @@ img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}'`
-echo -e ""
-echo -e ${ppl}"       __                        _______                      __  __ " 
-echo -e "      / /   __ ___  __  __ _ ___/ / ___/ ___ ____  ___  ___  / /_/ /_ "
-echo -e "     / /   / / __ '/ / / / / __  /\__  \/ __' __ \/__ \/__ \/ __/ __ \ "
-echo -e "    / /___/ / /_/ / /_/ / / /_/ /___/  / / / / / //_/ //_/ / /_/ / / / "
-echo -e "   /_____/_/\__, /\__,_/_/\__,_//____ /_/ /_/ /_/\___/\___/\__/_/ /_/ "
-echo -e "              /_/       "${txtrst} ${cya}"Liquid-Kitkat v-$VERSION"
-echo -e "                                $TARGET_PRODUCT_FINAL"${txtrst}
-echo -e ""
+echo -e ""; echo -e ${cya}"CentauriROM 4.4.3"
 echo -e ""; echo -e ${cya}"Package complete:${ylw} $OUTFILE"${txtrst}
 echo -e ${cya}"ZIP:${ylw}  $img"${txtrst}
 echo -e ${cya}"MD5: ${ylw} `cat $img.md5sum | awk '{print $1}'`"${txtrst}

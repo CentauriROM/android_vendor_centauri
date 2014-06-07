@@ -1,5 +1,5 @@
-# liquidsmooth
-PRODUCT_BRAND ?= liquidsmooth
+# CentauriROM
+PRODUCT_BRAND ?= CentauriROM
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # overrides
@@ -19,12 +19,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
 
 # CM Theme Engine
-include vendor/liquid/config/themes_common.mk
+include vendor/centauri/config/themes_common.mk
 
 # Added xbin files
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/xbin/zip:system/xbin/zip \
-    vendor/liquid/prebuilt/common/xbin/zipalign:system/xbin/zipalign
+    vendor/centauri/prebuilt/common/xbin/zip:system/xbin/zip \
+    vendor/centauri/prebuilt/common/xbin/zipalign:system/xbin/zipalign
 
 # Tether for all
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
@@ -37,33 +37,33 @@ PRODUCT_PACKAGES += \
     libnamparser
 
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/liquid/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check \
-    vendor/liquid/prebuilt/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
-    vendor/liquid/prebuilt/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-    vendor/liquid/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-    vendor/liquid/prebuilt/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
-    vendor/liquid/prebuilt/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
-    vendor/liquid/prebuilt/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
-    vendor/liquid/prebuilt/common/etc/init.d/09cron:system/etc/init.d/09cron \
-    vendor/liquid/prebuilt/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
-    vendor/liquid/prebuilt/common/etc/init.d/11battery:system/etc/init.d/11battery \
-    vendor/liquid/prebuilt/common/etc/init.d/12touch:system/etc/init.d/12touch \
-    vendor/liquid/prebuilt/common/etc/init.d/13minfree:system/etc/init.d/13minfree \
-    vendor/liquid/prebuilt/common/etc/init.d/14gpurender:system/etc/init.d/14gpurender \
-    vendor/liquid/prebuilt/common/etc/init.d/15sleepers:system/etc/init.d/15sleepers \
-    vendor/liquid/prebuilt/common/etc/init.d/16journalism:system/etc/init.d/16journalism \
-    vendor/liquid/prebuilt/common/etc/init.d/17sqlite3:system/etc/init.d/17sqlite3 \
-    vendor/liquid/prebuilt/common/etc/init.d/18wifisleep:system/etc/init.d/18wifisleep \
-    vendor/liquid/prebuilt/common/etc/init.d/19iostats:system/etc/init.d/19iostats \
-    vendor/liquid/prebuilt/common/etc/init.d/20setrenice:system/etc/init.d/20setrenice \
-    vendor/liquid/prebuilt/common/etc/init.d/21tweaks:system/etc/init.d/21tweaks \
-    vendor/liquid/prebuilt/common/etc/init.d/24speedy_modified:system/etc/init.d/24speedy_modified \
-    vendor/liquid/prebuilt/common/etc/init.d/25loopy_smoothness_tweak:system/etc/init.d/25loopy_smoothness_tweak \
-    vendor/liquid/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-    vendor/liquid/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
-    vendor/liquid/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
-    vendor/liquid/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/centauri/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/centauri/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check \
+    vendor/centauri/prebuilt/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
+    vendor/centauri/prebuilt/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
+    vendor/centauri/prebuilt/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+    vendor/centauri/prebuilt/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
+    vendor/centauri/prebuilt/common/etc/init.d/06removecache:system/etc/init.d/06removecache \
+    vendor/centauri/prebuilt/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
+    vendor/centauri/prebuilt/common/etc/init.d/09cron:system/etc/init.d/09cron \
+    vendor/centauri/prebuilt/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
+    vendor/centauri/prebuilt/common/etc/init.d/11battery:system/etc/init.d/11battery \
+    vendor/centauri/prebuilt/common/etc/init.d/12touch:system/etc/init.d/12touch \
+    vendor/centauri/prebuilt/common/etc/init.d/13minfree:system/etc/init.d/13minfree \
+    vendor/centauri/prebuilt/common/etc/init.d/14gpurender:system/etc/init.d/14gpurender \
+    vendor/centauri/prebuilt/common/etc/init.d/15sleepers:system/etc/init.d/15sleepers \
+    vendor/centauri/prebuilt/common/etc/init.d/16journalism:system/etc/init.d/16journalism \
+    vendor/centauri/prebuilt/common/etc/init.d/17sqlite3:system/etc/init.d/17sqlite3 \
+    vendor/centauri/prebuilt/common/etc/init.d/18wifisleep:system/etc/init.d/18wifisleep \
+    vendor/centauri/prebuilt/common/etc/init.d/19iostats:system/etc/init.d/19iostats \
+    vendor/centauri/prebuilt/common/etc/init.d/20setrenice:system/etc/init.d/20setrenice \
+    vendor/centauri/prebuilt/common/etc/init.d/21tweaks:system/etc/init.d/21tweaks \
+    vendor/centauri/prebuilt/common/etc/init.d/24speedy_modified:system/etc/init.d/24speedy_modified \
+    vendor/centauri/prebuilt/common/etc/init.d/25loopy_smoothness_tweak:system/etc/init.d/25loopy_smoothness_tweak \
+    vendor/centauri/prebuilt/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+    vendor/centauri/prebuilt/common/etc/helpers.sh:system/etc/helpers.sh \
+    vendor/centauri/prebuilt/common/etc/init.d.cfg:system/etc/init.d.cfg \
+    vendor/centauri/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Core Apps
 PRODUCT_PACKAGES += \
@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Torch
 
-# Extras for Liquid
+# Extras for CentauriROM
 PRODUCT_PACKAGES += \
     DashClock \
     DeskClock \
@@ -118,46 +118,46 @@ PRODUCT_PACKAGES += \
     sqlite3
 
 # overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/liquid/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/centauri/overlay/common
 
 # dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/liquid/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/centauri/overlay/dictionaries
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/liquid/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/liquid/prebuilt/common/bin/50-liquid.sh:system/addon.d/50-liquid.sh \
-    vendor/liquid/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/centauri/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/centauri/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/centauri/prebuilt/common/bin/50-centauri.sh:system/addon.d/50-centauri.sh \
+    vendor/centauri/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # bin
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/centauri/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/centauri/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # etc
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/etc/init.liquid.rc:root/init.liquid.rc
+    vendor/centauri/prebuilt/common/etc/init.centauri.rc:root/init.centauri.rc
 
 # media
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
-    PRODUCT_BOOTANIMATION := vendor/liquid/prebuilt/common/bootanimation/$(TARGET_SCREEN_WIDTH).zip:system/media/bootanimation.zip
+    PRODUCT_BOOTANIMATION := vendor/centauri/prebuilt/common/bootanimation/$(TARGET_SCREEN_WIDTH).zip:system/media/bootanimation.zip
 endif
 
 # nfc
 PRODUCT_COPY_FILES += \
-    vendor/liquid/config/permissions/com.liquidsmooth.android.xml:system/etc/permissions/com.liquidsmooth.android.xml \
-    vendor/liquid/config/permissions/com.liquidsmooth.nfc.enhanced.xml:system/etc/permissions/com.liquidsmooth.nfc.enhanced.xml
+    vendor/centauri/config/permissions/com.centauri.android.xml:system/etc/permissions/com.centauri.android.xml \
+    vendor/centauri/config/permissions/com.centauri.nfc.enhanced.xml:system/etc/permissions/com.centauri.nfc.enhanced.xml
 
 # prebuilt
 PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/xbin/sysro:system/xbin/sysro \
-    vendor/liquid/prebuilt/common/xbin/sysrw:system/xbin/sysrw \
-    vendor/liquid/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/liquid/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/centauri/prebuilt/common/xbin/sysro:system/xbin/sysro \
+    vendor/centauri/prebuilt/common/xbin/sysrw:system/xbin/sysrw \
+    vendor/centauri/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/centauri/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # sip/voip
 PRODUCT_COPY_FILES += \
@@ -165,25 +165,25 @@ PRODUCT_COPY_FILES += \
 
 # version
 RELEASE = false
-LIQUID_VERSION_MAJOR = 3
-LIQUID_VERSION_MINOR = 1
+CENTAURI_VERSION_MAJOR = 3
+CENTAURI_VERSION_MINOR = 1
 
 # release
 ifeq ($(RELEASE),true)
-    LIQUID_VERSION_STATE := OFFICIAL
-    LIQUID_VERSION := LS-KK-v$(LIQUID_VERSION_MAJOR).$(LIQUID_VERSION_MINOR)-$(LIQUID_VERSION_STATE)
+    CENTAURI_VERSION_STATE := OFFICIAL
+    CENTAURI_VERSION := CentauriROM-v$(CENTAURI_VERSION_MAJOR).$(CENTAURI_VERSION_MINOR)-$(CENTAURI_VERSION_STATE)
 else
-    LIQUID_VERSION_STATE := $(shell date +%Y-%m-%d)
-    LIQUID_VERSION := LS-KK-v$(LIQUID_VERSION_MAJOR).$(LIQUID_VERSION_MINOR)-$(LIQUID_VERSION_STATE)
+    CENTAURI_VERSION_STATE := $(shell date +%Y-%m-%d)
+    CENTAURI_VERSION := CentauriROM-v$(CENTAURI_VERSION_MAJOR).$(CENTAURI_VERSION_MINOR)-$(CENTAURI_VERSION_STATE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.liquid.version=$(LIQUID_VERSION)
+    ro.centauri.version=$(CENTAURI_VERSION)
 
 # statistics identity
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.romstats.url=http://www.drdevs.com/stats/liquid/ \
-    ro.romstats.name=LiquidSmooth \
-    ro.romstats.version=$(LIQUID_VERSION) \
+    ro.romstats.url=http://www.drdevs.com/stats/centauri/ \
+    ro.romstats.name=CentauriROM \
+    ro.romstats.version=$(CENTAURI_VERSION) \
     ro.romstats.askfirst=0 \
     ro.romstats.tframe=1

@@ -4,7 +4,7 @@ usage()
 {
     echo -e ""
     echo -e ${txtbld}"Usage:"${txtrst}
-    echo -e "  build-liquid.sh [options] device"
+    echo -e "  build-centauri.sh [options] device"
     echo -e ""
     echo -e ${txtbld}"  Options:"${txtrst}
     echo -e "    -c# Cleanin options before build:"
@@ -23,20 +23,20 @@ usage()
     echo -e "    -v  Verbose build output"
     echo -e ""
     echo -e ${txtbld}"  Example:"${txtrst}
-    echo -e "    ./build-liquid.sh -p -o3 -j18 hammerhead"
+    echo -e "    ./build-centauri.sh -p -o3 -j18 hammerhead"
     echo -e ""
     exit 1
 }
 
 # colors
-. ./vendor/liquid/tools/colors
+. ./vendor/centauri/tools/colors
 
 if [ ! -d ".repo" ]; then
     echo -e ${red}"No .repo directory found.  Is this an Android build tree?"${txtrst}
     exit 1
 fi
-if [ ! -d "vendor/liquid" ]; then
-    echo -e ${red}"No vendor/liquid directory found.  Is this an liquid build tree?"${txtrst}
+if [ ! -d "vendor/centauri" ]; then
+    echo -e ${red}"No vendor/centauri directory found.  Is this an centauri build tree?"${txtrst}
     exit 1
 fi
 
@@ -111,10 +111,10 @@ fi
 device="$1"
 
 # get current version
-eval $(grep "^LIQUID_VERSION_" vendor/liquid/config/common.mk | sed 's/ *//g')
-VERSION="$LIQUID_VERSION_MAJOR.$LIQUID_VERSION_MINOR.$LIQUID_VERSION_MAINTENANCE"
+eval $(grep "^CENTAURI_VERSION_" vendor/centauri/config/common.mk | sed 's/ *//g')
+VERSION="$CENTAURI_VERSION_MAJOR.$CENTAURI_VERSION_MINOR.$CENTAURI_VERSION_MAINTENANCE"
 
-echo -e ${cya}"Building ${ppl}Liquidsmooth ${bldylw}$VERSION"${txtrst}
+echo -e ${cya}"Building ${ppl}CentauriROM ${bldylw}$VERSION"${txtrst}
 
 if [ "$opt_clean" -eq 1 ]; then
     make clean >/dev/null
@@ -168,7 +168,7 @@ fi
 # lunch device
 echo -e ""
 echo -e ${bldblu}"Lunching device"${txtrst}
-lunch "liquid_$device-userdebug";
+lunch "centauri_$device-userdebug";
 
 echo -e ""
 echo -e ${bldblu}"Starting compilation"${txtrst}
@@ -199,14 +199,14 @@ else
 fi
 
 if [ "$opt_verbose" -ne 0 ]; then
-make -j"$opt_jobs" showcommands liquid
+make -j"$opt_jobs" showcommands centauri
 else
-make -j"$opt_jobs" liquid
+make -j"$opt_jobs" centauri
 fi
 echo -e ""
 
 # cleanup unused built
-rm -f $OUTDIR/target/product/$device/liquid_*-ota*.zip
+rm -f $OUTDIR/target/product/$device/centauri_*-ota*.zip
 
 # finished? get elapsed time
 t2=$($DATE +%s)
