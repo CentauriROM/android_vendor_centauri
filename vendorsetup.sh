@@ -1,7 +1,6 @@
 add_lunch_combo centauri_acclaim-userdebug
 add_lunch_combo centauri_codina-userdebug
 add_lunch_combo centauri_d2lte-userdebug
-add_lunch_combo centauri_d710-userdebug
 add_lunch_combo centauri_d800-userdebug
 add_lunch_combo centauri_d801-userdebug
 add_lunch_combo centauri_d802-userdebug
@@ -9,7 +8,6 @@ add_lunch_combo centauri_d803-userdebug
 add_lunch_combo centauri_deb-userdebug
 add_lunch_combo centauri_dlx-userdebug
 add_lunch_combo centauri_falcon-userdebug
-add_lunch_combo centauri_find7a-userdebug
 add_lunch_combo centauri_flo-userdebug
 add_lunch_combo centauri_gee-userdebug
 add_lunch_combo centauri_geeb-userdebug
@@ -24,6 +22,7 @@ add_lunch_combo centauri_i9300-userdebug
 add_lunch_combo centauri_i9305-userdebug
 add_lunch_combo centauri_i9500-userdebug
 add_lunch_combo centauri_janice-userdebug
+add_lunch_combo centauri_jewel-userdebug
 add_lunch_combo centauri_jflte-userdebug
 add_lunch_combo centauri_l900-userdebug
 add_lunch_combo centauri_ls980-userdebug
