@@ -86,10 +86,10 @@ PRODUCT_PACKAGES += \
     DeskClock \
     DSPManager \
     KernelTweaker \
-    LiquidFileManager \
-    LiquidLauncher \
+    CentauriFileManager \
+    CentauriLauncher \
     LiquidPapers \
-    LiquidStats \
+    CentauriStats \
     LiquidUpdater
 
 # superuser
