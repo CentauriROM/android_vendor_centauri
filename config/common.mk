@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
 
 # Extras for CentauriROM
 PRODUCT_PACKAGES += \
+    Apollo \
     DashClock \
     DeskClock \
     DSPManager \
