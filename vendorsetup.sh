@@ -1,6 +1,9 @@
 add_lunch_combo centauri_acclaim-userdebug
+add_lunch_combo centauri_apexqtmo-userdebug
+add_lunch_combo centauri_bacon-userdebug
 add_lunch_combo centauri_codina-userdebug
 add_lunch_combo centauri_d2lte-userdebug
+add_lunch_combo centauri_d710-userdebug
 add_lunch_combo centauri_d800-userdebug
 add_lunch_combo centauri_d801-userdebug
 add_lunch_combo centauri_d802-userdebug
