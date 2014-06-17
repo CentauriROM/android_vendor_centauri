@@ -38,10 +38,7 @@ add_lunch_combo centauri_mako-userdebug
 add_lunch_combo centauri_manta-userdebug
 add_lunch_combo centauri_maserati-userdebug
 add_lunch_combo centauri_meliusltexx-userdebug
-add_lunch_combo centauri_m7-userdebug
 add_lunch_combo centauri_m7lte-userdebug
-add_lunch_combo centauri_m7spr-userdebug
-add_lunch_combo centauri_m7vzw-userdebug
 add_lunch_combo centauri_m8-userdebug
 add_lunch_combo centauri_moto_msm8960-userdebug
 add_lunch_combo centauri_moto_msm8960dt-userdebug
