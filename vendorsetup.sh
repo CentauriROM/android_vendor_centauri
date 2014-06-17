@@ -10,6 +10,7 @@ add_lunch_combo centauri_d802-userdebug
 add_lunch_combo centauri_d803-userdebug
 add_lunch_combo centauri_deb-userdebug
 add_lunch_combo centauri_dlx-userdebug
+add_lunch_combo centauri_f320-userdebug
 add_lunch_combo centauri_falcon-userdebug
 add_lunch_combo centauri_flo-userdebug
 add_lunch_combo centauri_gee-userdebug
