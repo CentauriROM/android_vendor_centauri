@@ -28,6 +28,7 @@ add_lunch_combo centauri_i9500-userdebug
 add_lunch_combo centauri_janice-userdebug
 add_lunch_combo centauri_jewel-userdebug
 add_lunch_combo centauri_jflte-userdebug
+add_lunch_combo centauri_klte-userdebug
 add_lunch_combo centauri_l900-userdebug
 add_lunch_combo centauri_ls980-userdebug
 add_lunch_combo centauri_lt01lte-userdebug
@@ -59,5 +60,6 @@ add_lunch_combo centauri_toro-userdebug
 add_lunch_combo centauri_toroplus-userdebug
 add_lunch_combo centauri_umts_spyder-userdebug
 add_lunch_combo centauri_v500-userdebug
+add_lunch_combo centauri_vigor-userdebug
 add_lunch_combo centauri_vs980-userdebug
 add_lunch_combo centauri_yuga-userdebug
